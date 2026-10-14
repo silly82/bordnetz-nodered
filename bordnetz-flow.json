@@ -527,6 +527,31 @@
     "id": "ios_in_18",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
+    "name": "battery.capacity",
+    "service": "${BATTERY_SERVICE}",
+    "path": "/Capacity",
+    "serviceObj": {
+      "service": "${BATTERY_SERVICE}",
+      "name": "BATTERY_SERVICE"
+    },
+    "pathObj": {
+      "path": "/Capacity",
+      "name": "/Capacity",
+      "type": "number"
+    },
+    "onlyChanges": false,
+    "x": 170,
+    "y": 1140,
+    "wires": [
+      [
+        "ios_collect"
+      ]
+    ]
+  },
+  {
+    "id": "ios_in_19",
+    "type": "victron-input-custom",
+    "z": "bordnetz_api_tab",
     "name": "door.state",
     "service": "${DOOR_SERVICE}",
     "path": "/State",
@@ -541,7 +566,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1140,
+    "y": 1180,
     "wires": [
       [
         "ios_collect"
@@ -549,7 +574,7 @@
     ]
   },
   {
-    "id": "ios_in_19",
+    "id": "ios_in_20",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "gps.latitude",
@@ -566,7 +591,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1180,
+    "y": 1220,
     "wires": [
       [
         "ios_collect"
@@ -574,7 +599,7 @@
     ]
   },
   {
-    "id": "ios_in_20",
+    "id": "ios_in_21",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "gps.longitude",
@@ -591,7 +616,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1220,
+    "y": 1260,
     "wires": [
       [
         "ios_collect"
@@ -599,7 +624,7 @@
     ]
   },
   {
-    "id": "ios_in_21",
+    "id": "ios_in_22",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "gps.speed",
@@ -616,7 +641,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1260,
+    "y": 1300,
     "wires": [
       [
         "ios_collect"
@@ -624,7 +649,7 @@
     ]
   },
   {
-    "id": "ios_in_22",
+    "id": "ios_in_23",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "gps.fix",
@@ -641,31 +666,6 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1300,
-    "wires": [
-      [
-        "ios_collect"
-      ]
-    ]
-  },
-  {
-    "id": "ios_in_23",
-    "type": "victron-input-custom",
-    "z": "bordnetz_api_tab",
-    "name": "humidity.aussen",
-    "service": "${TEMP_OUTSIDE_SERVICE}",
-    "path": "/Humidity",
-    "serviceObj": {
-      "service": "${TEMP_OUTSIDE_SERVICE}",
-      "name": "TEMP_OUTSIDE_SERVICE"
-    },
-    "pathObj": {
-      "path": "/Humidity",
-      "name": "/Humidity",
-      "type": "number"
-    },
-    "onlyChanges": false,
-    "x": 170,
     "y": 1340,
     "wires": [
       [
@@ -677,12 +677,12 @@
     "id": "ios_in_24",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
-    "name": "humidity.kuehlschrank",
-    "service": "${TEMP_FRIDGE_SERVICE}",
+    "name": "humidity.aussen",
+    "service": "${TEMP_OUTSIDE_SERVICE}",
     "path": "/Humidity",
     "serviceObj": {
-      "service": "${TEMP_FRIDGE_SERVICE}",
-      "name": "TEMP_FRIDGE_SERVICE"
+      "service": "${TEMP_OUTSIDE_SERVICE}",
+      "name": "TEMP_OUTSIDE_SERVICE"
     },
     "pathObj": {
       "path": "/Humidity",
@@ -702,12 +702,12 @@
     "id": "ios_in_25",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
-    "name": "humidity.innen",
-    "service": "${TEMP_INSIDE_SERVICE}",
+    "name": "humidity.kuehlschrank",
+    "service": "${TEMP_FRIDGE_SERVICE}",
     "path": "/Humidity",
     "serviceObj": {
-      "service": "${TEMP_INSIDE_SERVICE}",
-      "name": "TEMP_INSIDE_SERVICE"
+      "service": "${TEMP_FRIDGE_SERVICE}",
+      "name": "TEMP_FRIDGE_SERVICE"
     },
     "pathObj": {
       "path": "/Humidity",
@@ -727,6 +727,31 @@
     "id": "ios_in_26",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
+    "name": "humidity.innen",
+    "service": "${TEMP_INSIDE_SERVICE}",
+    "path": "/Humidity",
+    "serviceObj": {
+      "service": "${TEMP_INSIDE_SERVICE}",
+      "name": "TEMP_INSIDE_SERVICE"
+    },
+    "pathObj": {
+      "path": "/Humidity",
+      "name": "/Humidity",
+      "type": "number"
+    },
+    "onlyChanges": false,
+    "x": 170,
+    "y": 1460,
+    "wires": [
+      [
+        "ios_collect"
+      ]
+    ]
+  },
+  {
+    "id": "ios_in_27",
+    "type": "victron-input-custom",
+    "z": "bordnetz_api_tab",
     "name": "bms.CellImbalance",
     "service": "${BATTERY_SERVICE}",
     "path": "/Alarms/CellImbalance",
@@ -741,7 +766,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1460,
+    "y": 1500,
     "wires": [
       [
         "ios_collect"
@@ -749,7 +774,7 @@
     ]
   },
   {
-    "id": "ios_in_27",
+    "id": "ios_in_28",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighCellVoltage",
@@ -766,7 +791,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1500,
+    "y": 1540,
     "wires": [
       [
         "ios_collect"
@@ -774,7 +799,7 @@
     ]
   },
   {
-    "id": "ios_in_28",
+    "id": "ios_in_29",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.LowCellVoltage",
@@ -791,7 +816,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1540,
+    "y": 1580,
     "wires": [
       [
         "ios_collect"
@@ -799,7 +824,7 @@
     ]
   },
   {
-    "id": "ios_in_29",
+    "id": "ios_in_30",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighVoltage",
@@ -816,7 +841,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1580,
+    "y": 1620,
     "wires": [
       [
         "ios_collect"
@@ -824,7 +849,7 @@
     ]
   },
   {
-    "id": "ios_in_30",
+    "id": "ios_in_31",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.LowVoltage",
@@ -841,7 +866,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1620,
+    "y": 1660,
     "wires": [
       [
         "ios_collect"
@@ -849,7 +874,7 @@
     ]
   },
   {
-    "id": "ios_in_31",
+    "id": "ios_in_32",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighTemperature",
@@ -866,7 +891,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1660,
+    "y": 1700,
     "wires": [
       [
         "ios_collect"
@@ -874,7 +899,7 @@
     ]
   },
   {
-    "id": "ios_in_32",
+    "id": "ios_in_33",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.LowTemperature",
@@ -891,7 +916,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1700,
+    "y": 1740,
     "wires": [
       [
         "ios_collect"
@@ -899,7 +924,7 @@
     ]
   },
   {
-    "id": "ios_in_33",
+    "id": "ios_in_34",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighCurrent",
@@ -916,7 +941,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1740,
+    "y": 1780,
     "wires": [
       [
         "ios_collect"
@@ -924,7 +949,7 @@
     ]
   },
   {
-    "id": "ios_in_34",
+    "id": "ios_in_35",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighChargeCurrent",
@@ -941,7 +966,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1780,
+    "y": 1820,
     "wires": [
       [
         "ios_collect"
@@ -949,7 +974,7 @@
     ]
   },
   {
-    "id": "ios_in_35",
+    "id": "ios_in_36",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.HighDischargeCurrent",
@@ -966,7 +991,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1820,
+    "y": 1860,
     "wires": [
       [
         "ios_collect"
@@ -974,7 +999,7 @@
     ]
   },
   {
-    "id": "ios_in_36",
+    "id": "ios_in_37",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.InternalFailure",
@@ -991,7 +1016,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1860,
+    "y": 1900,
     "wires": [
       [
         "ios_collect"
@@ -999,7 +1024,7 @@
     ]
   },
   {
-    "id": "ios_in_37",
+    "id": "ios_in_38",
     "type": "victron-input-custom",
     "z": "bordnetz_api_tab",
     "name": "bms.StateOfHealth",
@@ -1016,7 +1041,7 @@
     },
     "onlyChanges": false,
     "x": 170,
-    "y": 1900,
+    "y": 1940,
     "wires": [
       [
         "ios_collect"
@@ -1539,7 +1564,7 @@
     "type": "function",
     "z": "bordnetz_api_tab",
     "name": "Token check + camper.status.v1",
-    "func": "// Limits from the tab's environment (SOC_LOW, FRIDGE_MAX), the rest fixed.\nconst setting = (name, fallback) => { const x = Number(env.get(name)); return env.get(name) !== '' && env.get(name) != null && isFinite(x) ? x : fallback; };\nconst SOC_LOW = setting('SOC_LOW', 20), SOC_HYSTERESIS = 2;\nconst FRIDGE_MAX = setting('FRIDGE_MAX', 14), FRIDGE_MS = 30 * 60000, FRIDGE_OFF_MS = 5 * 60000;\nconst CHARGING_WINDOW_MS = 10 * 60000, SHORE_LOST_MS = 60 * 60000;\nconst CHARGING_STATES = [3, 4, 5, 6, 7, 11];\nconst TIME_TO_GO_MAX_S = 864000, ALTERNATOR_MIN_W = 20;\nconst CELL_SPREAD_MAX = 0.1;\nconst DRIVING_KMH = 5, AWAY_RADIUS_M = 200;\n// Alarm codes active now (flow context \"alarmState\", kept up to date by \"Collect values\", \"Shore power\" and\n// \"Fridge 12 V\").\nfunction activeAlarms(now) {\n    const alarm = flow.get('alarmState') || {};\n    const alarms = [];\n    if (alarm.socLow) alarms.push('soc_low');\n    if (alarm.fridgeWarmSince && now - alarm.fridgeWarmSince >= FRIDGE_MS) alarms.push('fridge_warm');\n    if (alarm.shoreLostAt && now - alarm.shoreLostAt < SHORE_LOST_MS) alarms.push('shore_lost');\n    if (alarm.fridgeOffSince && now - alarm.fridgeOffSince >= FRIDGE_OFF_MS) alarms.push('fridge_off');\n    if (alarm.awayMovedAt) alarms.push('away_moved');\n    if (alarm.awayDoorAt) alarms.push('away_door');\n    return alarms;\n}\nfunction dayKey(ms) {\n    const t = new Date(ms), pad = x => String(x).padStart(2, '0');\n    return t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());\n}\n// A day for the API: whole Wh, hours with two digits.\nfunction energyDay(date, d) {\n    if (!d) return null;\n    const out = { date: date };\n    for (const k of ['solarWh', 'chargerWh', 'alternatorWh', 'consumptionWh', 'batteryInWh', 'batteryOutWh', 'shoreWh']) {\n        out[k] = Math.round(d[k] || 0);\n    }\n    out.hours = +(d.hours || 0).toFixed(2);\n    out.socStart = typeof d.socStart === 'number' ? d.socStart : null;\n    out.socEnd = typeof d.socEnd === 'number' ? d.socEnd : null;\n    return out;\n}\n// Campsite counter (same rule as in \"Shore power (Shelly)\").\nfunction sessionKWh(session) {\n    if (!session || typeof session.lastKWh !== 'number' || typeof session.startKWh !== 'number') return session ? session.accumulatedKWh || 0 : null;\n    return (session.accumulatedKWh || 0) + session.lastKWh - session.startKWh;\n}\n// GET /api/camper/status -> camper.status.v1 (Bordnetz docs/PLAN.md, 3.1).\nconst expected = env.get('IOS_API_TOKEN') || '';\nconst header = (msg.req.headers.authorization || '');\nconst given = header.startsWith('Bearer ') ? header.slice(7) : '';\n\nfunction same(a, b) {   // constant time for equal lengths\n    if (!a || a.length !== b.length) return false;\n    let diff = 0;\n    for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);\n    return diff === 0;\n}\n\nmsg.headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };\nif (!expected || !same(given, expected)) {\n    msg.statusCode = 401;\n    msg.headers['WWW-Authenticate'] = 'Bearer';\n    msg.payload = { error: 'unauthorized' };\n    node.status({ fill: 'red', shape: 'ring', text: '401 · ' + new Date().toLocaleTimeString() });\n    return msg;\n}\n\n\nconst v = flow.get('values') || {};\nconst shore = flow.get('shore') || {};\nconst num = (key, digits) => {\n    const x = v[key];\n    if (typeof x !== 'number' || !isFinite(x)) return null;\n    return digits === undefined ? x : +x.toFixed(digits);\n};\n// Victron charge states (solarcharger and charger /State).\nconst STATES = { 0: 'off', 1: 'low power', 2: 'fault', 3: 'bulk', 4: 'absorption', 5: 'float', 6: 'storage',\n                 7: 'equalize', 8: 'passthru', 9: 'inverting', 10: 'power assist', 11: 'power supply',\n                 245: 'starting', 246: 'repeated absorption', 247: 'equalize', 248: 'battery safe',\n                 252: 'external control' };\nconst state = key => (typeof v[key] === 'number') ? (STATES[v[key]] || ('state ' + v[key])) : null;\nconst ttgRaw = num('battery.timeToGo');   // seconds on D-Bus; TIME_TO_GO_MAX_S while charging or idle\nconst ttg = ttgRaw === null || ttgRaw >= TIME_TO_GO_MAX_S ? null : ttgRaw;\n\n// DC consumption = what solar and charger deliver minus what goes into the battery, all as DC currents at the\n// battery voltage (solar.power is on the PV side). The MPPT's battery current does not include its load output,\n// whose loads count as consumption too. Negative: an unmeasured source charges, i.e. the alternator through the\n// DC-DC converter. Charger and load output count as 0 while missing.\nconst batI = num('battery.current'), batV = num('battery.voltage'), solarI = num('solar.current');\nconst dcPower = batI === null || batV === null || solarI === null ? null\n    : Math.round((solarI + (num('solar.loadCurrent') || 0) + (num('charger.current') || 0) - batI) * batV);\n\nconst alarms = activeAlarms(Date.now());\n// BMS alarms (warning or alarm), e.g. \"CellImbalance\" -> \"bms_cell_imbalance\".\nfor (const key of Object.keys(v)) {\n    if (key.startsWith('bms.') && typeof v[key] === 'number' && v[key] > 0) {\n        alarms.push('bms_' + key.slice(4).replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase());\n    }\n}\n// Digital input states: 6 open, 7 closed (Victron \"Door alarm\" type).\nconst door = v['door.state'] === 6 ? true : v['door.state'] === 7 ? false : null;\nconst speed = num('gps.speed');   // m/s\nconst hasFix = v['gps.fix'] === 1;\nconst away = flow.get('away') || {};\nconst orNull = x => x === undefined ? null : x;\n// \"com.victronenergy.battery/100\" -> 100; null when the service is not set.\nconst instance = name => { const m = /\\/(\\d+)$/.exec(env.get(name) || ''); return m ? Number(m[1]) : null; };\nconst energy = flow.get('energy') || {};\nconst today = dayKey(Date.now()), yesterday = dayKey(Date.now() - 86400000);\n\nmsg.statusCode = 200;\nmsg.payload = {\n    schema: 'camper.status.v1',\n    ts: new Date().toISOString(),\n    battery: {\n        soc: num('battery.soc', 1),\n        voltage: num('battery.voltage', 2),\n        current: num('battery.current', 1),\n        power: num('battery.power', 0),\n        timeToGoMin: ttg === null ? null : Math.round(ttg / 60),\n        cellMinV: num('battery.cellMin', 3),\n        cellMaxV: num('battery.cellMax', 3)\n    },\n    solar: {\n        power: num('solar.power', 0),\n        pvVoltage: num('solar.pvVoltage', 1),\n        state: state('solar.state'),\n        yieldTodayKWh: num('solar.yieldToday', 2)\n    },\n    shore: {\n        connected: typeof shore.connected === 'boolean' ? shore.connected : null,\n        power: typeof shore.power === 'number' ? +shore.power.toFixed(1) : null,\n        voltage: typeof shore.voltage === 'number' ? +shore.voltage.toFixed(1) : null,\n        energyKWh: typeof shore.energyKWh === 'number' ? +shore.energyKWh.toFixed(2) : null,\n        sessionKWh: sessionKWh(flow.get('shoreSession')) === null ? null : +sessionKWh(flow.get('shoreSession')).toFixed(2),\n        sessionSince: (flow.get('shoreSession') || {}).since || null\n    },\n    charger: { state: state('charger.state'), current: num('charger.current', 1) },\n    dc: { power: dcPower, alternator: dcPower === null ? null : dcPower < -ALTERNATOR_MIN_W },\n    temps: {\n        aussen: num('temps.aussen', 1),\n        innen: num('temps.innen', 1),\n        kuehlschrank: num('temps.kuehlschrank', 1)\n    },\n    humidity: {\n        aussen: num('humidity.aussen', 0),\n        innen: num('humidity.innen', 0),\n        kuehlschrank: num('humidity.kuehlschrank', 0)\n    },\n    fridge: { on12V: typeof v['fridge.on12V'] === 'boolean' ? v['fridge.on12V'] : null },\n    door: { open: door },\n    location: hasFix ? {\n        latitude: num('gps.latitude', 5),\n        longitude: num('gps.longitude', 5),\n        speedKmh: speed === null ? null : +(speed * 3.6).toFixed(1)\n    } : null,\n    away: away.active ? { active: true, since: orNull(away.since), latitude: orNull(away.latitude),\n                          longitude: orNull(away.longitude), radius: orNull(away.radius) }\n                      : { active: false, since: null, latitude: null, longitude: null, radius: null },\n    energy: { today: energyDay(today, energy[today]), yesterday: energyDay(yesterday, energy[yesterday]) },\n    alarms: alarms,\n    // The app colours SOC, fridge and cell spread at the same limits as the alarms.\n    limits: { socLow: SOC_LOW, fridgeMax: FRIDGE_MAX, cellSpreadMax: CELL_SPREAD_MAX },\n    // Which devices are set up, as VRM instances: without the GX the app reads the same ones from VRM.\n    devices: {\n        shore: !!env.get('SHORE_SHELLY_TOPIC'),\n        battery: instance('BATTERY_SERVICE'), solar: instance('SOLAR_SERVICE'), charger: instance('CHARGER_SERVICE'),\n        tempOutside: instance('TEMP_OUTSIDE_SERVICE'), tempInside: instance('TEMP_INSIDE_SERVICE'),\n        tempFridge: instance('TEMP_FRIDGE_SERVICE'), door: instance('DOOR_SERVICE')\n    }\n};\nnode.status({ fill: 'green', shape: 'dot', text: '200 · ' + new Date().toLocaleTimeString() });\nreturn msg;",
+    "func": "// Limits from the tab's environment (SOC_LOW, FRIDGE_MAX), the rest fixed.\nconst setting = (name, fallback) => { const x = Number(env.get(name)); return env.get(name) !== '' && env.get(name) != null && isFinite(x) ? x : fallback; };\nconst SOC_LOW = setting('SOC_LOW', 20), SOC_HYSTERESIS = 2;\nconst FRIDGE_MAX = setting('FRIDGE_MAX', 14), FRIDGE_MS = 30 * 60000, FRIDGE_OFF_MS = 5 * 60000;\nconst CHARGING_WINDOW_MS = 10 * 60000, SHORE_LOST_MS = 60 * 60000;\nconst CHARGING_STATES = [3, 4, 5, 6, 7, 11];\nconst TIME_TO_GO_MAX_S = 864000, ALTERNATOR_MIN_W = 20;\nconst CELL_SPREAD_MAX = 0.1;\nconst DRIVING_KMH = 5, AWAY_RADIUS_M = 200;\n// Alarm codes active now (flow context \"alarmState\", kept up to date by \"Collect values\", \"Shore power\" and\n// \"Fridge 12 V\").\nfunction activeAlarms(now) {\n    const alarm = flow.get('alarmState') || {};\n    const alarms = [];\n    if (alarm.socLow) alarms.push('soc_low');\n    if (alarm.fridgeWarmSince && now - alarm.fridgeWarmSince >= FRIDGE_MS) alarms.push('fridge_warm');\n    if (alarm.shoreLostAt && now - alarm.shoreLostAt < SHORE_LOST_MS) alarms.push('shore_lost');\n    if (alarm.fridgeOffSince && now - alarm.fridgeOffSince >= FRIDGE_OFF_MS) alarms.push('fridge_off');\n    if (alarm.awayMovedAt) alarms.push('away_moved');\n    if (alarm.awayDoorAt) alarms.push('away_door');\n    return alarms;\n}\nfunction dayKey(ms) {\n    const t = new Date(ms), pad = x => String(x).padStart(2, '0');\n    return t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());\n}\n// A day for the API: whole Wh, hours with two digits.\nfunction energyDay(date, d) {\n    if (!d) return null;\n    const out = { date: date };\n    for (const k of ['solarWh', 'chargerWh', 'alternatorWh', 'consumptionWh', 'batteryInWh', 'batteryOutWh', 'shoreWh']) {\n        out[k] = Math.round(d[k] || 0);\n    }\n    out.hours = +(d.hours || 0).toFixed(2);\n    out.socStart = typeof d.socStart === 'number' ? d.socStart : null;\n    out.socEnd = typeof d.socEnd === 'number' ? d.socEnd : null;\n    return out;\n}\n// Campsite counter (same rule as in \"Shore power (Shelly)\").\nfunction sessionKWh(session) {\n    if (!session || typeof session.lastKWh !== 'number' || typeof session.startKWh !== 'number') return session ? session.accumulatedKWh || 0 : null;\n    return (session.accumulatedKWh || 0) + session.lastKWh - session.startKWh;\n}\n// GET /api/camper/status -> camper.status.v1 (Bordnetz docs/PLAN.md, 3.1).\nconst expected = env.get('IOS_API_TOKEN') || '';\nconst header = (msg.req.headers.authorization || '');\nconst given = header.startsWith('Bearer ') ? header.slice(7) : '';\n\nfunction same(a, b) {   // constant time for equal lengths\n    if (!a || a.length !== b.length) return false;\n    let diff = 0;\n    for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);\n    return diff === 0;\n}\n\nmsg.headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };\nif (!expected || !same(given, expected)) {\n    msg.statusCode = 401;\n    msg.headers['WWW-Authenticate'] = 'Bearer';\n    msg.payload = { error: 'unauthorized' };\n    node.status({ fill: 'red', shape: 'ring', text: '401 · ' + new Date().toLocaleTimeString() });\n    return msg;\n}\n\n\nconst v = flow.get('values') || {};\nconst shore = flow.get('shore') || {};\nconst num = (key, digits) => {\n    const x = v[key];\n    if (typeof x !== 'number' || !isFinite(x)) return null;\n    return digits === undefined ? x : +x.toFixed(digits);\n};\n// Victron charge states (solarcharger and charger /State).\nconst STATES = { 0: 'off', 1: 'low power', 2: 'fault', 3: 'bulk', 4: 'absorption', 5: 'float', 6: 'storage',\n                 7: 'equalize', 8: 'passthru', 9: 'inverting', 10: 'power assist', 11: 'power supply',\n                 245: 'starting', 246: 'repeated absorption', 247: 'equalize', 248: 'battery safe',\n                 252: 'external control' };\nconst state = key => (typeof v[key] === 'number') ? (STATES[v[key]] || ('state ' + v[key])) : null;\nconst ttgRaw = num('battery.timeToGo');   // seconds on D-Bus; TIME_TO_GO_MAX_S while charging or idle\nconst ttg = ttgRaw === null || ttgRaw >= TIME_TO_GO_MAX_S ? null : ttgRaw;\n\n// DC consumption = what solar and charger deliver minus what goes into the battery, all as DC currents at the\n// battery voltage (solar.power is on the PV side). The MPPT's battery current does not include its load output,\n// whose loads count as consumption too. Negative: an unmeasured source charges, i.e. the alternator through the\n// DC-DC converter. Charger and load output count as 0 while missing.\nconst batI = num('battery.current'), batV = num('battery.voltage'), solarI = num('solar.current');\nconst dcPower = batI === null || batV === null || solarI === null ? null\n    : Math.round((solarI + (num('solar.loadCurrent') || 0) + (num('charger.current') || 0) - batI) * batV);\n\nconst alarms = activeAlarms(Date.now());\n// BMS alarms (warning or alarm), e.g. \"CellImbalance\" -> \"bms_cell_imbalance\".\nfor (const key of Object.keys(v)) {\n    if (key.startsWith('bms.') && typeof v[key] === 'number' && v[key] > 0) {\n        alarms.push('bms_' + key.slice(4).replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase());\n    }\n}\n// Digital input states: 6 open, 7 closed (Victron \"Door alarm\" type).\nconst door = v['door.state'] === 6 ? true : v['door.state'] === 7 ? false : null;\nconst speed = num('gps.speed');   // m/s\nconst hasFix = v['gps.fix'] === 1;\nconst away = flow.get('away') || {};\nconst orNull = x => x === undefined ? null : x;\n// \"com.victronenergy.battery/100\" -> 100; null when the service is not set.\nconst instance = name => { const m = /\\/(\\d+)$/.exec(env.get(name) || ''); return m ? Number(m[1]) : null; };\nconst energy = flow.get('energy') || {};\nconst today = dayKey(Date.now()), yesterday = dayKey(Date.now() - 86400000);\n\nmsg.statusCode = 200;\nmsg.payload = {\n    schema: 'camper.status.v1',\n    ts: new Date().toISOString(),\n    battery: {\n        soc: num('battery.soc', 1),\n        voltage: num('battery.voltage', 2),\n        current: num('battery.current', 1),\n        power: num('battery.power', 0),\n        timeToGoMin: ttg === null ? null : Math.round(ttg / 60),\n        cellMinV: num('battery.cellMin', 3),\n        cellMaxV: num('battery.cellMax', 3),\n        // Full capacity in Ah as the BMS reports it; the app's forecast needs it.\n        capacityAh: num('battery.capacity', 0)\n    },\n    solar: {\n        power: num('solar.power', 0),\n        pvVoltage: num('solar.pvVoltage', 1),\n        state: state('solar.state'),\n        yieldTodayKWh: num('solar.yieldToday', 2)\n    },\n    shore: {\n        connected: typeof shore.connected === 'boolean' ? shore.connected : null,\n        power: typeof shore.power === 'number' ? +shore.power.toFixed(1) : null,\n        voltage: typeof shore.voltage === 'number' ? +shore.voltage.toFixed(1) : null,\n        energyKWh: typeof shore.energyKWh === 'number' ? +shore.energyKWh.toFixed(2) : null,\n        sessionKWh: sessionKWh(flow.get('shoreSession')) === null ? null : +sessionKWh(flow.get('shoreSession')).toFixed(2),\n        sessionSince: (flow.get('shoreSession') || {}).since || null\n    },\n    charger: { state: state('charger.state'), current: num('charger.current', 1) },\n    dc: { power: dcPower, alternator: dcPower === null ? null : dcPower < -ALTERNATOR_MIN_W },\n    temps: {\n        aussen: num('temps.aussen', 1),\n        innen: num('temps.innen', 1),\n        kuehlschrank: num('temps.kuehlschrank', 1)\n    },\n    humidity: {\n        aussen: num('humidity.aussen', 0),\n        innen: num('humidity.innen', 0),\n        kuehlschrank: num('humidity.kuehlschrank', 0)\n    },\n    fridge: { on12V: typeof v['fridge.on12V'] === 'boolean' ? v['fridge.on12V'] : null },\n    door: { open: door },\n    location: hasFix ? {\n        latitude: num('gps.latitude', 5),\n        longitude: num('gps.longitude', 5),\n        speedKmh: speed === null ? null : +(speed * 3.6).toFixed(1)\n    } : null,\n    away: away.active ? { active: true, since: orNull(away.since), latitude: orNull(away.latitude),\n                          longitude: orNull(away.longitude), radius: orNull(away.radius) }\n                      : { active: false, since: null, latitude: null, longitude: null, radius: null },\n    energy: { today: energyDay(today, energy[today]), yesterday: energyDay(yesterday, energy[yesterday]) },\n    alarms: alarms,\n    // The app colours SOC, fridge and cell spread at the same limits as the alarms.\n    limits: { socLow: SOC_LOW, fridgeMax: FRIDGE_MAX, cellSpreadMax: CELL_SPREAD_MAX },\n    // Which devices are set up, as VRM instances: without the GX the app reads the same ones from VRM.\n    devices: {\n        shore: !!env.get('SHORE_SHELLY_TOPIC'),\n        battery: instance('BATTERY_SERVICE'), solar: instance('SOLAR_SERVICE'), charger: instance('CHARGER_SERVICE'),\n        tempOutside: instance('TEMP_OUTSIDE_SERVICE'), tempInside: instance('TEMP_INSIDE_SERVICE'),\n        tempFridge: instance('TEMP_FRIDGE_SERVICE'), door: instance('DOOR_SERVICE')\n    }\n};\nnode.status({ fill: 'green', shape: 'dot', text: '200 · ' + new Date().toLocaleTimeString() });\nreturn msg;",
     "outputs": 1,
     "timeout": 0,
     "noerr": 0,

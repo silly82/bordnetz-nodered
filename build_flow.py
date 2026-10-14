@@ -8,7 +8,7 @@ POST /api/camper/away {active}, POST /api/camper/shore/reset.
 Configuration lives in the tab's environment variables (Node-RED editor: double-click the tab → Environment
 variables), so the generated file fits every vehicle and nothing here has to be edited. See README.md, Configure:
     IOS_API_TOKEN          the app's bearer token (type cred: encrypted in Node-RED's credentials, never in a file)
-    BATTERY_SERVICE        e.g. com.victronenergy.battery/512   (SOC, voltage, current, cells, BMS alarms)
+    BATTERY_SERVICE        e.g. com.victronenergy.battery/512   (SOC, voltage, current, cells, capacity, BMS alarms)
     SOLAR_SERVICE          e.g. com.victronenergy.solarcharger/279
     CHARGER_SERVICE        e.g. com.victronenergy.charger/288   (AC charger)
     TEMP_OUTSIDE_SERVICE, TEMP_INSIDE_SERVICE, TEMP_FRIDGE_SERVICE   e.g. com.victronenergy.temperature/20
@@ -151,6 +151,7 @@ INPUTS = [
     ("temps.innen", INSIDE, "/Temperature"),
     ("battery.cellMin", BATTERY, "/System/MinCellVoltage"),
     ("battery.cellMax", BATTERY, "/System/MaxCellVoltage"),
+    ("battery.capacity", BATTERY, "/Capacity"),
     ("door.state", DOOR, "/State"),
     ("gps.latitude", GPS, "/Position/Latitude"),
     ("gps.longitude", GPS, "/Position/Longitude"),
@@ -485,7 +486,9 @@ msg.payload = {
         power: num('battery.power', 0),
         timeToGoMin: ttg === null ? null : Math.round(ttg / 60),
         cellMinV: num('battery.cellMin', 3),
-        cellMaxV: num('battery.cellMax', 3)
+        cellMaxV: num('battery.cellMax', 3),
+        // Full capacity in Ah as the BMS reports it; the app's forecast needs it.
+        capacityAh: num('battery.capacity', 0)
     },
     solar: {
         power: num('solar.power', 0),
